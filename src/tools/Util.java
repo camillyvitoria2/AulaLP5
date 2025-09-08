@@ -4,7 +4,9 @@
  */
 package tools;
 
+import javax.swing.JComboBox;
 import javax.swing.JComponent;
+import javax.swing.JOptionPane;
 import javax.swing.JTextField;
 
 /**
@@ -12,18 +14,32 @@ import javax.swing.JTextField;
  * @author u1845853
  */
 public class Util {
-    public static void habilitar(boolean valor, JComponent ... componentes) {
+
+    public static void habilitar(boolean valor, JComponent... componentes) {
         for (int i = 0; i < componentes.length; i++) {
-            componentes[i].setEnabled(valor);           
+            componentes[i].setEnabled(valor);
         }
     }
-  public static void limpar(JComponent ...components){
-      for (int i = 0; i < components.length; i++) {
-          //instanceof
-          ((JTextField) components[i]).setText("");
-          
-      }
- 
-     
-  }
+
+    public static void limpar(JComponent... components) {
+        for (int i = 0; i < components.length; i++) {
+            if (components[i] instanceof JTextField) {
+                ((JTextField) components[i]).setText("");
+
+                if (components[i] instanceof JComboBox) {
+                    ((JComboBox) components[i]).setSelectedIndex(-1);
+
+                }
+            }
+        }
+    }
+
+    public static void mensagem(String cad) {
+        JOptionPane.showMessageDialog(null, cad);
+    }
+    public static boolean perguntar(String cad) {
+        JOptionPane.showConfirmDialog(null, cad);
+        return true;
+
+}
 }
