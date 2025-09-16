@@ -4,6 +4,7 @@
  */
 package tools;
 
+import java.util.Date;
 import javax.swing.JComboBox;
 import javax.swing.JComponent;
 import javax.swing.JOptionPane;
@@ -40,6 +41,26 @@ public class Util {
     public static boolean perguntar(String cad) {
         JOptionPane.showConfirmDialog(null, cad);
         return true;
-
-}
+    }
+    public static int strToInt(String cad){
+        return Integer.valueOf(cad);
+    }
+    public static String intToStr(int num){
+        return String.valueOf(num);
+    } 
+     public static double strToDouble(String cad){
+         return 0;
+         
+     }
+     public static String doubleToStr(double num){
+         return "";
+    }
+     public static Date strToDate(String cad){
+         return null;
+     
+     }
+       public static String dateTostr(Date data){
+         return "";
+     
+    }
 }
